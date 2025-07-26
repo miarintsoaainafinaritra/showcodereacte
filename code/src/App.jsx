@@ -18,7 +18,6 @@ import {
   FaChartLine
 } from 'react-icons/fa';
 
-
 import list1 from "./assets/images/photo22.jpg";
 import list2 from "./assets/images/photo2.jpg";
 import list3 from "./assets/images/pokemon9.jpg";
@@ -31,9 +30,10 @@ import list9 from "./assets/images/pokemon18.jpg";
 import list10 from "./assets/images/photo4.jpg";
 import list11 from "./assets/images/images8.png";
 import list12 from "./assets/images/images9.jpg";
-import list13  from "./assets/images/photo5.jpg";
+import list13 from "./assets/images/photo5.jpg";
 import list14 from "./assets/images/pokemon20.jpg";
 import list15 from "./assets/images/pokemon21.jpg";
+
 const pokemonData = [
   {
     id: 1,
@@ -49,7 +49,8 @@ const pokemonData = [
       { stat: { name: "speed" }, base_stat: 90 }
     ],
     height: 0.4,
-    weight: 6
+    weight: 6,
+    description: "Meowth is known for its love of shiny coins and its ability to use Pay Day in battles."
   },
   {
     id: 2,
@@ -65,14 +66,65 @@ const pokemonData = [
       { stat: { name: "speed" }, base_stat: 45 }
     ],
     height: 0.7,
-    weight: 6.9
+    weight: 6.9,
+    description: "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon."
   },
- 
   {
     id: 3,
     name: "Gyarados",
     image: list3,
-    types: ["grass", "water"],
+    types: ["water", "flying"],
+    stats: [
+      { stat: { name: "hp" }, base_stat: 95 },
+      { stat: { name: "attack" }, base_stat: 125 },
+      { stat: { name: "defense" }, base_stat: 79 },
+      { stat: { name: "special-attack" }, base_stat: 60 },
+      { stat: { name: "special-defense" }, base_stat: 100 },
+      { stat: { name: "speed" }, base_stat: 81 }
+    ],
+    height: 6.5,
+    weight: 235,
+    description: "Once it appears, it goes on a rampage. It remains enraged until it demolishes everything around it."
+  },
+  {
+    id: 4,
+    name: "Charmander",
+    image: list4,
+    types: ["fire"],
+    stats: [
+      { stat: { name: "hp" }, base_stat: 39 },
+      { stat: { name: "attack" }, base_stat: 52 },
+      { stat: { name: "defense" }, base_stat: 43 },
+      { stat: { name: "special-attack" }, base_stat: 60 },
+      { stat: { name: "special-defense" }, base_stat: 50 },
+      { stat: { name: "speed" }, base_stat: 65 }
+    ],
+    height: 0.6,
+    weight: 8.5,
+    description: "The flame on its tail shows the strength of its life force. If it is weak, the flame also burns weakly."
+  },
+  {
+    id: 5,
+    name: "Blastoise",
+    image: list5,
+    types: ["water"],
+    stats: [
+      { stat: { name: "hp" }, base_stat: 79 },
+      { stat: { name: "attack" }, base_stat: 83 },
+      { stat: { name: "defense" }, base_stat: 100 },
+      { stat: { name: "special-attack" }, base_stat: 85 },
+      { stat: { name: "special-defense" }, base_stat: 105 },
+      { stat: { name: "speed" }, base_stat: 78 }
+    ],
+    height: 1.6,
+    weight: 85.5,
+    description: "Blastoise has water spouts that protrude from its shell. The water spouts are very accurate."
+  },
+  {
+    id: 6,
+    name: "Charizard",
+    image: list6,
+    types: ["fire", "flying"],
     stats: [
       { stat: { name: "hp" }, base_stat: 78 },
       { stat: { name: "attack" }, base_stat: 84 },
@@ -82,60 +134,11 @@ const pokemonData = [
       { stat: { name: "speed" }, base_stat: 100 }
     ],
     height: 1.7,
-    weight: 90.5
+    weight: 90.5,
+    description: "It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames."
   },
-  {
-    id:4,
-    name:"Charmander",
-    image: list4,
-    types: ["fire", "flying"],
-    stats: [
-      { stat: { name: "hp" }, base_stat: 81 },
-      { stat: { name: "attack" }, base_stat: 91 },
-      { stat: { name: "defense" }, base_stat: 81 },
-      { stat: { name: "special-attack" }, base_stat: 119 },
-      { stat: { name: "special-defense" }, base_stat: 87 },
-      { stat: { name: "speed" }, base_stat: 100 }
-    ],
-    height: 2.5,
-    weight: 94.5
 
-  },
-  {
-    id:5,
-    name:"Blastoise",
-    image: list5,
-    types: ["grass", "water"],
-    stats: [
-      { stat: { name: "hp" }, base_stat: 81 },
-      { stat: { name: "attack" }, base_stat: 91 },
-      { stat: { name: "defense" }, base_stat: 81 },
-      { stat: { name: "special-attack" }, base_stat: 119 },
-      { stat: { name: "special-defense" }, base_stat: 87 },
-      { stat: { name: "speed" }, base_stat: 100 }
-    ],
-    height: 2.5,
-    weight: 94.5
-
-  },
-  {
-    id:6,
-    name:"Charizard",
-    image: list6,
-    types: ["fire", "flying"],
-    stats: [
-      { stat: { name: "hp" }, base_stat: 81 },
-      { stat: { name: "attack" }, base_stat: 91 },
-      { stat: { name: "defense" }, base_stat: 81 },
-      { stat: { name: "special-attack" }, base_stat: 119 },
-      { stat: { name: "special-defense" }, base_stat: 87 },
-      { stat: { name: "speed" }, base_stat: 100 }
-    ],
-    height: 2.5,
-    weight: 94.5
-
-  },
-  {
+   {
     id:7,
     name:"Ivysaur",
     image: list7,
@@ -286,7 +289,7 @@ const pokemonData = [
     height: 3.5,
     weight: 87.5
   },
-
+  // ... (autres Pokémon conservés avec leurs données originales)
 ];
 
 function App() {
@@ -324,6 +327,7 @@ function App() {
         : [...prev, id]
     );
   };
+
   return (
     <div className="app">
       <header className="app-header">
@@ -380,6 +384,8 @@ function App() {
                         {type === 'poison' && <FaSkull className="type-icon" />}
                         {type === 'fire' && <FaFire className="type-icon" />}
                         {type === 'water' && <FaTint className="type-icon" />}
+                        {type === 'electric' && <FaBolt className="type-icon" />}
+                        {type === 'flying' && <FaRunning className="type-icon" />}
                         {type}
                       </span>
                     ))}
@@ -396,70 +402,77 @@ function App() {
           </div>
         )}
       </main>
-{selectedPokemon && (
-  <div className="pokemon-modal" onClick={() => setSelectedPokemon(null)}>
-    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-      <button className="close-modal" onClick={() => setSelectedPokemon(null)}>
-        <FaTimes />
-      </button>
-      
-      <div className="pokemon-id">#{selectedPokemon.id.toString().padStart(3, '0')}</div>
-      
-      <div className="modal-header">
-        <h2 className="pokemon-name">{selectedPokemon.name}</h2>
-        <div className="pokemon-types">
-          {selectedPokemon.types.map(type => (
-            <span key={type} className={`type-badge type-${type}`}>
-              {type.toUpperCase()}
-            </span>
-          ))}
-        </div>
-      </div>
-      
-      <img 
-        src={selectedPokemon.image} 
-        alt={selectedPokemon.name}
-        className="modal-pokemon-image"
-      />
-      
-      <div className="modal-body">
-        <div className="modal-section">
-          <h3 className="section-title">Description</h3>
-          <p className="pokemon-description">{selectedPokemon.description || "Aucune description disponible."}</p>
-        </div>
-        
-        <div className="physical-stats">
-          <div className="stat-item">
-            <strong>Taille</strong>
-            <p>{selectedPokemon.height} m</p>
+
+      {selectedPokemon && (
+        <div className="pokemon-modal" onClick={() => setSelectedPokemon(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal" onClick={() => setSelectedPokemon(null)}>
+              <FaTimes />
+            </button>
+            
+            <div className="pokemon-id">#{selectedPokemon.id.toString().padStart(3, '0')}</div>
+            
+            <div className="modal-header">
+              <h2 className="pokemon-name">{selectedPokemon.name}</h2>
+              <div className="pokemon-types">
+                {selectedPokemon.types.map(type => (
+                  <span key={type} className={`type-badge type-${type}`}>
+                    {type === 'grass' && <FaLeaf className="type-icon" />}
+                    {type === 'poison' && <FaSkull className="type-icon" />}
+                    {type === 'fire' && <FaFire className="type-icon" />}
+                    {type === 'water' && <FaTint className="type-icon" />}
+                    {type === 'electric' && <FaBolt className="type-icon" />}
+                    {type === 'flying' && <FaRunning className="type-icon" />}
+                    {type.toUpperCase()}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <img 
+              src={selectedPokemon.image} 
+              alt={selectedPokemon.name}
+              className="modal-pokemon-image"
+            />
+            
+            <div className="modal-body">
+              <div className="modal-section">
+                <h3 className="section-title">Description</h3>
+                <p className="pokemon-description">{selectedPokemon.description || "Aucune description disponible."}</p>
+              </div>
+              
+              <div className="physical-stats">
+                <div className="stat-item">
+                  <FaRulerVertical className="stat-icon" />
+                  <div>
+                    <strong>Height</strong>
+                    <p>{selectedPokemon.height} m</p>
+                  </div>
+                </div>
+                <div className="stat-item">
+                  <FaWeight className="stat-icon" />
+                  <div>
+                    <strong>Weight</strong>
+                    <p>{selectedPokemon.weight} kg</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="modal-section">
+                <h3 className="section-title">Base Stats</h3>
+                <div className="stats-grid">
+                  {selectedPokemon.stats.map((stat, index) => (
+                    <div key={index} className="stat-item">
+                      <span className="stat-name">{stat.stat.name.replace('-', ' ')}:</span>
+                      <span className="stat-value">{stat.base_stat}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="stat-item">
-            <strong>Poids</strong>
-            <p>{selectedPokemon.weight} kg</p>
-          </div>
         </div>
-        
-        <div className="modal-section">
-          <h3 className="section-title">Types</h3>
-          <div className="pokemon-types-list">
-            {selectedPokemon.types.map(type => (
-              <span key={type} className={`type-badge type-${type}`}>
-                {type.toUpperCase()}
-              </span>
-            ))}
-          </div>
-        </div>
-        
-        {selectedPokemon.category && (
-          <div className="modal-section">
-            <h3 className="section-title">Catégorie</h3>
-            <p>{selectedPokemon.category}</p>
-          </div>
-        )}
-      </div>
-    </div>
-  </div>
-)}
+      )}
 
       <footer className="app-footer">
         <p>Pokémon Gaming - Collection Personnalisée</p>
