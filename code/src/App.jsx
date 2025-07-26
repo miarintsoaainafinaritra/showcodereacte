@@ -39,7 +39,7 @@ const pokemonData = [
     id: 1,
     name: "Meowth Box",
     image: list1,
-    types: ["electric"],
+    types: ["normal","grass"],
     stats: [
       { stat: { name: "hp" }, base_stat: 35 },
       { stat: { name: "attack" }, base_stat: 55 },
@@ -67,13 +67,12 @@ const pokemonData = [
     height: 0.7,
     weight: 6.9
   },
-  // ... Ajoutez les autres Pokémon ici
-
+ 
   {
     id: 3,
     name: "Gyarados",
     image: list3,
-    types: ["fire", "flying"],
+    types: ["grass", "water"],
     stats: [
       { stat: { name: "hp" }, base_stat: 78 },
       { stat: { name: "attack" }, base_stat: 84 },
@@ -106,7 +105,7 @@ const pokemonData = [
     id:5,
     name:"Blastoise",
     image: list5,
-    types: ["fire", "flying"],
+    types: ["grass", "water"],
     stats: [
       { stat: { name: "hp" }, base_stat: 81 },
       { stat: { name: "attack" }, base_stat: 91 },
@@ -140,7 +139,7 @@ const pokemonData = [
     id:7,
     name:"Ivysaur",
     image: list7,
-    types: ["fire", "flying"],
+    types: ["fire", "poison"],
     stats: [
       { stat: { name: "hp" }, base_stat: 81 },
       { stat: { name: "attack" }, base_stat: 91 },
@@ -157,7 +156,7 @@ const pokemonData = [
     id:8,
     name:"Jiggypuff",
     image: list8,
-    types: ["fire", "flying"],
+    types: ["normal", "flying"],
     stats: [
       { stat: { name: "hp" }, base_stat: 81 },
       { stat: { name: "attack" }, base_stat: 91 },
@@ -174,7 +173,7 @@ const pokemonData = [
     id:9,
     name:"Lucario",
     image: list9,
-    types: ["fire", "flying"],
+    types: ["fire", "water"],
     stats: [
       { stat: { name: "hp" }, base_stat: 81 },
       { stat: { name: "attack" }, base_stat: 91 },
@@ -191,7 +190,7 @@ const pokemonData = [
     id:10,
     name:"Snorlax",
     image: list10,
-    types: ["fire", "flying"],
+    types: ["grass", "water"],
     stats: [
       { stat: { name: "hp" }, base_stat: 81 },
       { stat: { name: "attack" }, base_stat: 91 },
@@ -208,7 +207,7 @@ const pokemonData = [
     id:11,
     name:"Pikachu",
     image: list11,
-    types: ["fire", "flying"],
+    types: ["fire", "electric"],
     stats: [
       { stat: { name: "hp" }, base_stat: 81 },
       { stat: { name: "attack" }, base_stat: 91 },
@@ -225,7 +224,7 @@ const pokemonData = [
     id:12,
     name:"Wartortle",
     image: list12,
-    types: ["fire", "flying"],
+    types: ["grass", "water"],
     stats: [
       { stat: { name: "hp" }, base_stat: 81 },
       { stat: { name: "attack" }, base_stat: 91 },
@@ -259,7 +258,7 @@ const pokemonData = [
      id:14,
     name:"Metagross",
     image: list14,
-    types: ["fire", "flying"],
+    types: ["fire", "electric"],
     stats: [
       { stat: { name: "hp" }, base_stat: 99 },
       { stat: { name: "attack" }, base_stat: 91 },
@@ -275,7 +274,7 @@ const pokemonData = [
      id:15,
     name:"Cute eevee",
     image: list15,
-    types: ["fire", "flying"],
+    types: ["normal", "grass"],
     stats: [
       { stat: { name: "hp" }, base_stat: 99 },
       { stat: { name: "attack" }, base_stat: 91 },
