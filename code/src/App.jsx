@@ -18,7 +18,7 @@ import {
   FaChartLine
 } from 'react-icons/fa';
 
-// Import des images
+
 import list1 from "./assets/images/photo22.jpg";
 import list2 from "./assets/images/photo2.jpg";
 import list3 from "./assets/images/pokemon9.jpg";
