@@ -518,15 +518,25 @@ body {
   text-transform: capitalize;
 }
 
-
-.pokemon-image {
-  width: 96px;
-  height: 96px;
+ .pokemon-image {
+  width: 150px;  
+  height: 150px; 
   object-fit: contain;
 }
+.pokemon-image-container {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding: 1rem;
+}
 
-.modal-pokemon-image {
-  width: 200px;
-  height: 200px;
+ .modal-pokemon-image {
+  width: 250px;  
+  height: 250px; 
   object-fit: contain;
+}
+.pokemon-card:hover .pokemon-image {
+  transform: scale(1.15);
 }
