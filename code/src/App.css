@@ -106,7 +106,6 @@ body {
 .pokeball-loading {
   width: 60px;
   height: 60px;
-  background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png');
   background-size: contain;
   animation: spin 1s linear infinite;
   margin-bottom: 1rem;
