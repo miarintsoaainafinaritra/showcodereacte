@@ -324,19 +324,6 @@ function App() {
         : [...prev, id]
     );
   };
-
-  const getStatColor = (statName) => {
-    switch(statName) {
-      case 'hp': return '#ff6b6b';
-      case 'attack': return '#feca1b';
-      case 'defense': return '#6c79db';
-      case 'special-attack': return '#f9a825';
-      case 'special-defense': return '#6c79db';
-      case 'speed': return '#ee99ac';
-      default: return '#a4a4a4';
-    }
-  };
-
   return (
     <div className="app">
       <header className="app-header">
@@ -409,104 +396,70 @@ function App() {
           </div>
         )}
       </main>
-
-      {selectedPokemon && (
-        <div className="pokemon-modal" onClick={() => setSelectedPokemon(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-modal" onClick={() => setSelectedPokemon(null)}>
-              <FaTimes />
-            </button>
-            <div className="modal-header">
-              <img 
-                src={selectedPokemon.image} 
-                alt={selectedPokemon.name}
-                className="modal-pokemon-image"
-              />
-              <div className="modal-header-info">
-                <h2>{selectedPokemon.name}</h2>
-                <p className="pokemon-number">#{selectedPokemon.id.toString().padStart(3, '0')}</p>
-                <div className="pokemon-types">
-                  {selectedPokemon.types.map(type => (
-                    <span key={type} className={`type-badge type-${type}`}>
-                      {type === 'grass' && <FaLeaf className="type-icon" />}
-                      {type === 'poison' && <FaSkull className="type-icon" />}
-                      {type === 'fire' && <FaFire className="type-icon" />}
-                      {type === 'water' && <FaTint className="type-icon" />}
-                      {type}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="modal-stats">
-              <div className="stat-item">
-                <h4><FaRulerVertical className="stat-icon" /> Taille</h4>
-                <p>{selectedPokemon.height} m</p>
-              </div>
-              <div className="stat-item">
-                <h4><FaWeight className="stat-icon" /> Poids</h4>
-                <p>{selectedPokemon.weight} kg</p>
-              </div>
-            </div>
-            <div className="modal-section">
-              <h4>Statistiques</h4>
-              <div className="stats-container">
-                {selectedPokemon.stats.map(stat => {
-                  let statIcon;
-                  let statLabel;
-                  switch(stat.stat.name) {
-                    case 'hp':
-                      statIcon = <FaHeart className="stat-icon" />;
-                      statLabel = 'PV';
-                      break;
-                    case 'attack':
-                      statIcon = <FaBolt className="stat-icon" />;
-                      statLabel = 'Attaque';
-                      break;
-                    case 'defense':
-                      statIcon = <FaShieldAlt className="stat-icon" />;
-                      statLabel = 'Défense';
-                      break;
-                    case 'special-attack':
-                      statIcon = <FaBolt className="stat-icon" />;
-                      statLabel = 'Att. Spé.';
-                      break;
-                    case 'special-defense':
-                      statIcon = <FaShieldAlt className="stat-icon" />;
-                      statLabel = 'Déf. Spé.';
-                      break;
-                    case 'speed':
-                      statIcon = <FaRunning className="stat-icon" />;
-                      statLabel = 'Vitesse';
-                      break;
-                    default:
-                      statIcon = <FaChartLine className="stat-icon" />;
-                      statLabel = stat.stat.name;
-                  }
-                  return (
-                    <div key={stat.stat.name} className="stat-bar">
-                      <span className="stat-name">
-                        {statIcon}
-                        {statLabel}
-                      </span>
-                      <div className="stat-bar-container">
-                        <div 
-                          className="stat-bar-fill" 
-                          style={{ 
-                            width: `${Math.min(100, stat.base_stat)}%`,
-                            backgroundColor: getStatColor(stat.stat.name)
-                          }}
-                        ></div>
-                        <span className="stat-value">{stat.base_stat}</span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+{selectedPokemon && (
+  <div className="pokemon-modal" onClick={() => setSelectedPokemon(null)}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <button className="close-modal" onClick={() => setSelectedPokemon(null)}>
+        <FaTimes />
+      </button>
+      
+      <div className="pokemon-id">#{selectedPokemon.id.toString().padStart(3, '0')}</div>
+      
+      <div className="modal-header">
+        <h2 className="pokemon-name">{selectedPokemon.name}</h2>
+        <div className="pokemon-types">
+          {selectedPokemon.types.map(type => (
+            <span key={type} className={`type-badge type-${type}`}>
+              {type.toUpperCase()}
+            </span>
+          ))}
+        </div>
+      </div>
+      
+      <img 
+        src={selectedPokemon.image} 
+        alt={selectedPokemon.name}
+        className="modal-pokemon-image"
+      />
+      
+      <div className="modal-body">
+        <div className="modal-section">
+          <h3 className="section-title">Description</h3>
+          <p className="pokemon-description">{selectedPokemon.description || "Aucune description disponible."}</p>
+        </div>
+        
+        <div className="physical-stats">
+          <div className="stat-item">
+            <strong>Taille</strong>
+            <p>{selectedPokemon.height} m</p>
+          </div>
+          <div className="stat-item">
+            <strong>Poids</strong>
+            <p>{selectedPokemon.weight} kg</p>
           </div>
         </div>
-      )}
+        
+        <div className="modal-section">
+          <h3 className="section-title">Types</h3>
+          <div className="pokemon-types-list">
+            {selectedPokemon.types.map(type => (
+              <span key={type} className={`type-badge type-${type}`}>
+                {type.toUpperCase()}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        {selectedPokemon.category && (
+          <div className="modal-section">
+            <h3 className="section-title">Catégorie</h3>
+            <p>{selectedPokemon.category}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+)}
 
       <footer className="app-footer">
         <p>Pokémon Gaming - Collection Personnalisée</p>
