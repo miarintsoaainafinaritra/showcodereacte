@@ -52,6 +52,7 @@ const pokemonData = [
     weight: 6,
     description: "Meowth is known for its love of shiny coins and its ability to use Pay Day in battles."
   },
+
   {
     id: 2,
     name: "Bulbasaur",
@@ -69,6 +70,7 @@ const pokemonData = [
     weight: 6.9,
     description: "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon."
   },
+
   {
     id: 3,
     name: "Gyarados",
@@ -103,6 +105,7 @@ const pokemonData = [
     weight: 8.5,
     description: "The flame on its tail shows the strength of its life force. If it is weak, the flame also burns weakly."
   },
+
   {
     id: 5,
     name: "Blastoise",
@@ -120,6 +123,7 @@ const pokemonData = [
     weight: 85.5,
     description: "Blastoise has water spouts that protrude from its shell. The water spouts are very accurate."
   },
+
   {
     id: 6,
     name: "Charizard",
@@ -428,19 +432,19 @@ function App() {
                 ))}
               </div>
             </div>
-            
-            <img 
-              src={selectedPokemon.image} 
+
+            <img
+              src={selectedPokemon.image}
               alt={selectedPokemon.name}
               className="modal-pokemon-image"
             />
-            
+
             <div className="modal-body">
               <div className="modal-section">
                 <h3 className="section-title">Description</h3>
                 <p className="pokemon-description">{selectedPokemon.description || "Aucune description disponible."}</p>
               </div>
-              
+
               <div className="physical-stats">
                 <div className="stat-item">
                   <FaRulerVertical className="stat-icon" />
@@ -483,3 +487,6 @@ function App() {
 }
 
 export default App;
+
+
+
