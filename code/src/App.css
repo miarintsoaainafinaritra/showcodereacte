@@ -550,6 +550,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  
 }
 
 .modal-content {
@@ -733,3 +734,5 @@ body {
   padding-bottom: 5px;
   border-bottom: 2px solid var(--border-color);
 }
+
+
